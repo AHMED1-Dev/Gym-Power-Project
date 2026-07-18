@@ -98,3 +98,17 @@ ScrollReveal().reveal(".plan", {
   ...scrollRevealOption,
   interval: 500,
 });
+
+function sendToWhatsApp(planName = "") {
+  const msg = `🏋️ *GYM POWER*
+${planName ? `📦 Plan: ${planName}` : ""}
+📅 Date: ${new Date().toLocaleDateString("en-EG")}
+🌐 Page: ${document.title}
+---
+I want to book now 🙌`;
+
+  window.open(
+    `https://wa.me/201113650935?text=${encodeURIComponent(msg)}`,
+    "_blank",
+  );
+}
